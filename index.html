@@ -23,8 +23,6 @@
             --card-bg: rgba(20, 20, 30, 0.7);
             --sidebar-width: 280px;
             --lighter-blue: #6bd5ff;
-            --earth: #d4a017;
-            --green: #4caf50;
         }
 
         body {
@@ -48,7 +46,7 @@
             height: 100%;
             background: 
                 radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05) 极%, transparent 20%),
                 radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 30%);
             pointer-events: none;
             z-index: -2;
@@ -61,9 +59,9 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(rgba(0, 255, 255, 极.03) 1px, transparent 1px),
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-size: 40px 极0px;
             pointer-events: none;
             z-index: -1;
         }
@@ -128,14 +126,14 @@
             padding: 12px 15px;
             border-radius: 8px;
             background: rgba(0, 255, 255, 0.05);
-            border: 1px solid rgba(0, 255, 255, 0.1);
+            border: 1极 solid rgba(0, 255, 255, 0.1);
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
 
         .sidebar-link:hover {
             background: rgba(0, 255, 255, 0.15);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(0, 极55, 255, 0.5);
             transform: translateY(-2px);
         }
 
@@ -156,14 +154,14 @@
             background: linear-gradient(to right, rgba(0, 255, 255, 0.1), transparent);
             border-bottom: 1px solid rgba(0, 255, 255, 0.2);
             margin-bottom: 22.5px;
-            border-radius: 0 0 15极 15px;
+            border-radius: 0 0 15px 15px;
         }
 
         h1 {
             font-size: 2.4rem;
             margin-bottom: 7.5px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-cl极: text;
+            -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-transform: uppercase;
@@ -175,7 +173,7 @@
             display: inline-block;
         }
 
-        h1::after {
+        h极::after {
             content: '';
             position: absolute;
             bottom: -6px;
@@ -196,6 +194,8 @@
         
         .header-image {
             width: 200px;
+            height: 200px;
+            object-fit: cover;
             margin: 15px auto;
             border-radius: 8px;
             border: 2px solid rgba(0, 255, 255, 0.3);
@@ -203,7 +203,7 @@
         }
 
         .contact-card {
-            background: var(--card极g);
+            background: var(--card-bg);
             border: 1px solid rgba(0, 255, 255, 0.1);
             border-radius: 11.25px;
             padding: 15px;
@@ -267,7 +267,7 @@
 
         .articles-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            grid-template-columns: repeat(auto-fill, min极ax(450px, 1fr));
             gap: 30px;
             margin: 30px 0;
         }
@@ -278,7 +278,7 @@
             border-radius: 11.25px;
             padding: 18.75px;
             transition: all 0.4s ease;
-            backdrop-filter: blur(5极);
+            backdrop-filter: blur(5px);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -301,7 +301,7 @@
 
         .article-card:hover {
             transform: translateY(-7.5px);
-            box-shadow: 0 11.25极 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 11.25px 30px rgba(0, 0, 0, 0.4);
             border-color: rgba(0, 255, 255, 0.4);
         }
 
@@ -362,7 +362,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin: 9px 0;
+            margin: 9px 极;
         }
 
         .meta-tag {
@@ -371,11 +371,11 @@
             padding: 3.75px 9px;
             border-radius: 15px;
             font-size: 0.6375rem;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(0, 255极 255, 0.2);
             text-shadow: 0 0 4px rgba(0, 255, 255, 0.3);
         }
 
-        .new-tag {
+        .new极tag {
             background: rgba(157, 78, 221, 0.2);
             color: var(--accent);
             border-color: rgba(157, 78, 221, 0.3);
@@ -408,7 +408,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 极.2), transparent);
             transition: 0.5s;
         }
 
@@ -486,6 +486,7 @@
             
             .header-image {
                 width: 150px;
+                height: 150px;
             }
         }
 
@@ -515,6 +516,7 @@
             
             .header-image {
                 width: 120px;
+                height: 120px;
             }
         }
     </style>
@@ -523,19 +525,19 @@
     <div class="grid-lines"></div>
     
     <!-- Back Button -->
-    <div class极back-button" id="backButton">
+    <div class="back-button" id="backButton">
         <i class="fas fa-arrow-left"></i>
     </div>
     
     <!-- Sidebar with links and images -->
     <div class="sidebar">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Chinua_Achebe_-_Buffalo_25Sept1975_%28cropped%29.jpg/800px-Chinua_Achebe_-_Buffalo_25Sept1975_%28cropped%29.jpg" alt="Chinua Achebe" class="sidebar-image">
+        <img src="https://github.com/oeybers-cpu/Achebe/blob/main/achebe.png?raw=true" alt="Chinua Achebe" class="sidebar-image">
         
         <div class="sidebar-links">
             <a href="https://www.arcjournals.org/pdfs/ijsell/v8-i5/2.pdf" class="sidebar-link" target="_blank">
                 Cultural decolonization through the colonizer's language
             </a>
-            <a href="https://scielo.org.za/scielo.php?script=sci_arttext&pid=S2415-04792024000100003" class="sidebar-link" target="_blank">
+            <a href="https://scielo.org.za/s极elo.php?script=sci_arttext&pid=S2415-04792024000100003" class="sidebar-link" target="_blank">
                 Reflections on the language question, afropolitanism, and linguistic orientation
             </a>
             <a href="https://www.jetir.org/papers/JETIR2503764.pdf" class="sidebar-link" target="_blank">
@@ -560,7 +562,7 @@
                 <h1>Chinua Achebe</h1>
                 <p class="subtitle">Language, Literature & Academic Literacy Development in Postcolonial Contexts</p>
                 
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Chinua_Achebe_-_Buffalo_25Sept1975_%28cropped%29.jpg/800px极hinua_Achebe_-_Buffalo_25Sept1975_%28cropped%29.jpg" alt="Chinua Achebe" class="header-image">
+                <img src="https://github.com/oeybers-cpu/Achebe/blob/main/achebe.png?raw=true" alt="Chinua Achebe" class="header-image">
                 
                 <div class="contact-card">
                     <h2><i class="fas fa-quote-left"></i> Central Philosophy</h2>
@@ -600,7 +602,7 @@
                         <p><strong>Achebe's approach to English:</strong></p>
                         <ul>
                             <li>Pragmatic use for wider communication</li>
-                            <li>Africanization of English through local idioms</li>
+                            <li>Africanization of English through local idioms</极>
                             <li>Infusing English with African imagery and rhythms</li>
                             <li>Making the language serve African expressive needs</li>
                         </ul>
@@ -610,7 +612,7 @@
                             <li>Developing locally relevant English language materials</li>
                             <li>Valuing code-switching and hybrid language forms</li>
                             <li>Recognizing the legitimacy of African varieties of English</li>
-                            <li>Using literature to teach language in cultural context</li>
+                            <li>Using literature极 teach language in cultural context</li>
                         </ul>
                     </div>
                     <div class="article-meta">
@@ -637,7 +639,7 @@
                         <ul>
                             <li>Enriches academic literacy with cultural depth</li>
                             <li>Makes education more inclusive of traditional knowledge</li>
-                            <li>Creates continuity between home/community and school learning</li>
+                            <li>Creates continuity between home/community and school极arning</li>
                             <li>Develops multiple literacies rather than replacing one with another</li>
                         </ul>
                     </div>
@@ -663,7 +665,7 @@
                         
                         <p><strong>Benefits for academic literacy:</strong></p>
                         <ul>
-                            <li>Creates personal connection to learning materials</li>
+                            <极>Creates personal connection to learning materials</li>
                             <li>Develops critical thinking about power and representation</li>
                             <li>Builds confidence in students' cultural identity</li>
                             <li>Prepares students to engage globally without cultural surrender</li>
@@ -707,7 +709,7 @@
                 <div class="article-card">
                     <h3><i class="fas fa-globe-africa"></i> Literature as Empowerment</h3>
                     <div class="article-content">
-                        <p>For Achebe, literature becomes a tool for social and intellectual empowerment: it develops critical thinking, fosters dialogue among cultures, and inspires students to reflect on the past and envision a future.</p>
+                        <p>For Achebe, literature becomes a tool for social and intellectual empowerment: it develops critical thinking, fosters dialogue among cultures, and inspires students极 reflect on the past and envision a future.</p>
                         
                         <p><strong>Empowerment through literature:</strong></p>
                         <ul>
@@ -728,7 +730,7 @@
                         <p>Achebe's approach makes academic literacy more inclusive, locally rooted, and critically engaged with issues of history and identity.</p>
                     </div>
                     <div class="article-meta">
-                        <span class极meta-tag">Literature</span>
+                        <span class="meta-tag">Literature</span>
                         <span class="meta-tag">Empowerment</span>
                     </div>
                 </div>
@@ -738,7 +740,7 @@
                 <div class="university-logo">
                     <svg viewBox="0 0 100 30" fill="#9d4edd">
                         <path d="M10,15 Q20,5 30,15 T50,15 T70,15 T90,15" stroke="#0ff" stroke-width="2" fill="none"/>
-                        <circle cx="50" cy="15" r="5" fill="#0ff"/>
+                        <circle cx="50"极="15" r="5" fill="#0ff"/>
                         <text x="50" y="25" text-anchor="middle" fill="#aaa" font-size="8">LITERARY DECOLONIZATION</text>
                     </svg>
                 </div>
