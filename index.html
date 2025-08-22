@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinua Achebe | Language, Literature & Academic Literacy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0ff;
+            --secondary: #f0f;
+            --accent: #9d4edd;
+            --dark: #0a0a14;
+            --darker: #050508;
+            --light: #f0f0f0;
+            --card-bg: rgba(20, 20, 30, 0.7);
+            --sidebar-width: 280px;
+            --lighter-blue: #6bd5ff;
+            --earth: #d4a017;
+            --green: #4caf50;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+            font-family: 'Exo 2', sans-serif;
+            line-height: 1.6;
+            display: flex;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .grid-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 极.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Back button styling */
+        .back-button {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 1000;
+            background: rgba(20, 20, 30, 0.7);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+
+        .back-button:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateX(-5px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            border-radius: 11.25px;
+            margin-right: 30px;
+            backdrop-filter: blur(10px);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .sidebar-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar-link {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 8px;
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-link:hover {
+            background: rgba(0, 255, 255, 0.15);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0 15px;
+            position: relative;
+            background: linear-gradient(to right, rgba(0, 255, 255, 0.1), transparent);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            margin-bottom: 22.5px;
+            border-radius: 0 0 15极 15px;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 7.5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-cl极: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2.25px;
+            text-shadow: 0 0 11.25px rgba(0, 255, 255, 0.5);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 10%;
+            width: 80%;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+            border-radius: 50%;
+        }
+
+        .subtitle {
+            font-size: 0.825rem;
+            color: #aaa;
+            max-width: 800px;
+            margin: 11.25px auto 15px;
+            line-height: 1.6;
+        }
+        
+        .header-image {
+            width: 200px;
+            margin: 15px auto;
+            border-radius: 8px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-card {
+            background: var(--card极g);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            border-radius: 11.25px;
+            padding: 15px;
+            max-width: 600px;
+            margin: 22.5px auto;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 22.5px rgba(0, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 7.5px 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .contact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .contact-card h2 {
+            color: var(--primary);
+            margin-bottom: 11.25px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 11.25px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.825rem;
+            transition: all 0.3s ease;
+            word-break: break-all;
+            display: inline-block;
+            padding: 3.75px 7.5px;
+            border-radius: 3.75px;
+        }
+
+        .contact-card a:hover {
+            color: var(--secondary);
+            text-shadow: 0 0 11.25px rgba(255, 0, 255, 0.7);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .articles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            border-radius: 11.25px;
+            padding: 18.75px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5极);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-7.5px);
+            box-shadow: 0 11.25极 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 255, 255, 0.4);
+        }
+
+        .article-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .article-card h3 {
+            color: var(--lighter-blue);
+            font-size: 1.1rem;
+            margin-bottom: 11.25px;
+            line-height: 1.4;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 0 8px rgba(107, 213, 255, 0.6);
+        }
+
+        .article-card h3 i {
+            font-size: 1.3rem;
+        }
+
+        .article-content {
+            color: #ddd;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+        }
+
+        .article-content p {
+            margin-bottom: 12px;
+        }
+
+        .article-content ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+        }
+
+        .citation {
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--primary);
+            padding: 3.75px 9px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 9px 0;
+        }
+
+        .meta-tag {
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--primary);
+            padding: 3.75px 9px;
+            border-radius: 15px;
+            font-size: 0.6375rem;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            text-shadow: 0 0 4px rgba(0, 255, 255, 0.3);
+        }
+
+        .new-tag {
+            background: rgba(157, 78, 221, 0.2);
+            color: var(--accent);
+            border-color: rgba(157, 78, 221, 0.3);
+            text-shadow: 0 0 4px rgba(157, 78, 221, 0.3);
+        }
+
+        .article-link {
+            display: inline-block;
+            color: var(--light);
+            background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), rgba(157, 78, 221, 0.2));
+            padding: 7.5px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            text-align: center;
+            width: 100%;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.75px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .article-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .article-link:hover {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: var(--darker);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            transform: translateY(-2.25px);
+        }
+
+        .article-link:hover::before {
+            left: 100%;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 30px 0 15px;
+            color: #777;
+            font-size: 0.675rem;
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+            margin-top: 22.5px;
+        }
+
+        .copyright p {
+            margin: 6px 0;
+        }
+
+        .copyright a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .copyright a:hover {
+            color: var(--secondary);
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+        }
+
+        .university-logo {
+            width: 120px;
+            margin: 11.25px auto;
+            filter: brightness(0.8);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 1100px) {
+            .articles-container {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            }
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: relative;
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .articles-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.1rem;
+            }
+            
+            .subtitle {
+                font-size: 0.75rem;
+            }
+            
+            .header-image {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.65rem;
+            }
+            
+            .contact-card a {
+                font-size: 0.75rem;
+            }
+            
+            .article-card {
+                padding: 15px 11.25px;
+            }
+            
+            .article-card h3 {
+                font-size: 1rem;
+            }
+            
+            .back-button {
+                top: 15px;
+                left: 15px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .header-image {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-lines"></div>
+    
+    <!-- Back Button -->
+    <div class极back-button" id="backButton">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    
+    <!-- Sidebar with links and images -->
+    <div class="sidebar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Chinua_Achebe_-_Buffalo_25Sept1975_%28cropped%29.jpg/800px-Chinua_Achebe_-_Buffalo_25Sept1975_%28cropped%29.jpg" alt="Chinua Achebe" class="sidebar-image">
+        
+        <div class="sidebar-links">
+            <a href="https://www.arcjournals.org/pdfs/ijsell/v8-i5/2.pdf" class="sidebar-link" target="_blank">
+                Cultural decolonization through the colonizer's language
+            </a>
+            <a href="https://scielo.org.za/scielo.php?script=sci_arttext&pid=S2415-04792024000100003" class="sidebar-link" target="_blank">
+                Reflections on the language question, afropolitanism, and linguistic orientation
+            </a>
+            <a href="https://www.jetir.org/papers/JETIR2503764.pdf" class="sidebar-link" target="_blank">
+                Cultural identity in Chinua Achebe's things fall apart
+            </a>
+            <a href="https://oeybers-cpu.github.io/ngugi/" class="sidebar-link" target="_blank">
+                Ngugi wa Thiongo's perspective
+            </a>
+            <a href="https://oeybers-cpu.github.io/ngugi/" class="sidebar-link" target="_blank">
+                Language and power in post colonial literature
+            </a>
+            <a href="https://www.humanitiesjournal.net/archives/2025/vol7issue1/PartC/7-1-35-100.pdf" class="sidebar-link" target="_blank">
+                The voice of the marginalised
+            </a>
+        </div>
+    </div>
+    
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="container">
+            <header>
+                <h1>Chinua Achebe</h1>
+                <p class="subtitle">Language, Literature & Academic Literacy Development in Postcolonial Contexts</p>
+                
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Chinua_Achebe_-_Buffalo_25Sept1975_%28cropped%29.jpg/800px极hinua_Achebe_-_Buffalo_25Sept1975_%28cropped%29.jpg" alt="Chinua Achebe" class="header-image">
+                
+                <div class="contact-card">
+                    <h2><i class="fas fa-quote-left"></i> Central Philosophy</h2>
+                    <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">"The writer's role is to educate and regenerate their people about their country's view of themselves, their history, and the world. I would be quite satisfied if my novels did no more than teach my readers that their past was not one long night of savagery from which the first Europeans acting on God's behalf delivered them."</p>
+                </div>
+            </header>
+
+            <div class="articles-container">
+                <!-- Restoring African Narratives -->
+                <div class="article-card">
+                    <h3><i class="fas fa-book"></i> Restoring African Narratives</h3>
+                    <div class="article-content">
+                        <p>Achebe's literary works—especially "Things Fall Apart"—seek to reclaim African stories from colonial narratives that traditionally distorted or erased African histories and cultures. He believed in helping learners see themselves reflected in the curriculum and countering colonial stereotypes.</p>
+                        
+                        <p><strong>Key implications for academic literacy:</strong></p>
+                        <ul>
+                            <li>Reclaiming African stories from colonial distortions</li>
+                            <li>Providing counter-narratives to colonial historiography</li>
+                            <li>Helping learners see themselves in the curriculum</li>
+                            <li>Challenging Eurocentric perspectives in education</li>
+                        </ul>
+                        
+                        <p>This approach transforms academic literacy from mere skill acquisition to a process of cultural reclamation and identity formation.</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Narrative</span>
+                        <span class="meta-tag new-tag">Identity</span>
+                    </div>
+                </div>
+                
+                <!-- Interrogation of Language -->
+                <div class="article-card">
+                    <h3><i class="fas fa-language"></i> Interrogation of Language</h3>
+                    <div class="article-content">
+                        <p>Achebe famously chose to write in English, justifying this as a pragmatic step to reach both African and international audiences, and to reshape English for African realities. He advocated for a form of English that carries African imagery, idioms, and rhythms.</p>
+                        
+                        <p><strong>Achebe's approach to English:</strong></p>
+                        <ul>
+                            <li>Pragmatic use for wider communication</li>
+                            <li>Africanization of English through local idioms</li>
+                            <li>Infusing English with African imagery and rhythms</li>
+                            <li>Making the language serve African expressive needs</li>
+                        </ul>
+                        
+                        <p><strong>Educational applications:</strong></p>
+                        <ul>
+                            <li>Developing locally relevant English language materials</li>
+                            <li>Valuing code-switching and hybrid language forms</li>
+                            <li>Recognizing the legitimacy of African varieties of English</li>
+                            <li>Using literature to teach language in cultural context</li>
+                        </ul>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Language</span>
+                        <span class="meta-tag">Hybridity</span>
+                    </div>
+                </div>
+                
+                <!-- Bridging Orality and Literacy -->
+                <div class="article-card">
+                    <h3><i class="fas fa-microphone-alt"></i> Bridging Orality and Literacy</h3>
+                    <div class="article-content">
+                        <p>Achebe's novels often explore the transition from oral to literate societies. This foregrounds two important elements of academic literacy: the importance of orality (community storytelling, wisdom, values) and the necessity of mastering literacy for participation in modern society.</p>
+                        
+                        <p><strong>Key aspects of this bridge:</strong></p>
+                        <ul>
+                            <li>Valuing oral traditions as legitimate knowledge sources</li>
+                            <li>Incorporating proverbs and storytelling into education</li>
+                            <li>Recognizing the complementary nature of oral and written traditions</li>
+                            <li>Developing literacy without erasing oral cultural heritage</li>
+                        </ul>
+                        
+                        <p><strong>Transformative outcomes:</strong></p>
+                        <ul>
+                            <li>Enriches academic literacy with cultural depth</li>
+                            <li>Makes education more inclusive of traditional knowledge</li>
+                            <li>Creates continuity between home/community and school learning</li>
+                            <li>Develops multiple literacies rather than replacing one with another</li>
+                        </ul>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Orality</span>
+                        <span class="meta-tag new-tag">Tradition</span>
+                    </div>
+                </div>
+                
+                <!-- Cultural Affirmation -->
+                <div class="article-card">
+                    <h3><i class="fas fa-hands-helping"></i> Cultural Affirmation & Identity</h3>
+                    <div class="article-content">
+                        <p>Achebe's philosophy champions an academic literacy that empowers learners to interrogate inherited knowledge, reclaim their own narratives, and use language as a vehicle for self-expression, social critique, and cultural affirmation.</p>
+                        
+                        <p><strong>Key strategies for cultural affirmation:</strong></p>
+                        <ul>
+                            <li>Centering African perspectives in curriculum</li>
+                            <li>Validating indigenous knowledge systems</li>
+                            <li>Developing critical literacy about colonial histories</li>
+                            <li>Fostering pride in cultural heritage alongside academic skills</li>
+                        </ul>
+                        
+                        <p><strong>Benefits for academic literacy:</strong></p>
+                        <ul>
+                            <li>Creates personal connection to learning materials</li>
+                            <li>Develops critical thinking about power and representation</li>
+                            <li>Builds confidence in students' cultural identity</li>
+                            <li>Prepares students to engage globally without cultural surrender</li>
+                        </ul>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Culture</span>
+                        <span class="meta-tag">Identity</span>
+                    </div>
+                </div>
+                
+                <!-- Decolonizing English -->
+                <div class="article-card">
+                    <h3><i class="fas fa-pen-fancy"></i> Decolonizing English</h3>
+                    <div class="article-content">
+                        <p>Achebe's insistence on using English in a localized, Africanized way shows that language itself can be decolonized—not necessarily by abandoning colonial languages altogether, but by reshaping them to serve local realities and express indigenous values.</p>
+                        
+                        <p><strong>Decolonizing approaches:</strong></p>
+                        <ul>
+                            <li>Infusing English with African linguistic patterns</li>
+                            <li>Incorporating local metaphors and imagery</li>
+                            <li>Creating new vocabulary for African concepts</li>
+                            <li>Subverting colonial language for anti-colonial purposes</li>
+                        </ul>
+                        
+                        <p><strong>Classroom applications:</strong></p>
+                        <ul>
+                            <li>Studying African literature as models of decolonized English</li>
+                            <li>Encouraging students to write in their own voice</li>
+                            <li>Comparing different varieties of English globally</li>
+                            <li>Analyzing how language choices convey cultural values</li>
+                        </ul>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Decolonization</span>
+                        <span class="meta-tag new-tag">Language</span>
+                    </div>
+                </div>
+                
+                <!-- Literature as Empowerment -->
+                <div class="article-card">
+                    <h3><i class="fas fa-globe-africa"></i> Literature as Empowerment</h3>
+                    <div class="article-content">
+                        <p>For Achebe, literature becomes a tool for social and intellectual empowerment: it develops critical thinking, fosters dialogue among cultures, and inspires students to reflect on the past and envision a future.</p>
+                        
+                        <p><strong>Empowerment through literature:</strong></p>
+                        <ul>
+                            <li>Developing critical consciousness through textual analysis</li>
+                            <li>Understanding how stories shape perceptions of self and others</li>
+                            <li>Using literature to explore social and political issues</li>
+                            <li>Finding one's voice through engagement with powerful texts</li>
+                        </ul>
+                        
+                        <p><strong>Educational practices:</strong></p>
+                        <ul>
+                            <li>Teaching literature in historical and political context</li>
+                            <li>Connecting texts to students' lived experiences</li>
+                            <li>Using literature to develop empathy across cultural differences</li>
+                            <li>Encouraging students to create their own narratives</li>
+                        </ul>
+                        
+                        <p>Achebe's approach makes academic literacy more inclusive, locally rooted, and critically engaged with issues of history and identity.</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class极meta-tag">Literature</span>
+                        <span class="meta-tag">Empowerment</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="university-logo">
+                    <svg viewBox="0 0 100 30" fill="#9d4edd">
+                        <path d="M10,15 Q20,5 30,15 T50,15 T70,15 T90,15" stroke="#0ff" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="15" r="5" fill="#0ff"/>
+                        <text x="50" y="25" text-anchor="middle" fill="#aaa" font-size="8">LITERARY DECOLONIZATION</text>
+                    </svg>
+                </div>
+                <p>© 2024 Chinua Achebe Literary Philosophy Research Portal</p>
+                <p>Based on the works of Chinua Achebe, particularly "Things Fall Apart" and his essays</p>
+                <p>Explore more: <a href="https://oeybers-cpu.github.io/a_lit_models/" target="_blank">Academic Literacy Models</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add subtle animation to article cards on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.article-card');
+            
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Add pulse animation to contact card
+            const contactCard = document.querySelector('.contact-card');
+            setInterval(() => {
+                contactCard.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.3)';
+                setTimeout(() => {
+                    contactCard.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.1)';
+                }, 1000);
+            }, 3000);
+            
+            // Back button functionality
+            const backButton = document.getElementById('backButton');
+            backButton.addEventListener('click', function() {
+                // Check if there's a previous page in history
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    // If no history, redirect to home or search
+                    window.location.href = 'https://www.google.com/search?q=Chinua+Achebe';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
