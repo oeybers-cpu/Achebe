@@ -23,6 +23,8 @@
             --card-bg: rgba(20, 20, 30, 0.7);
             --sidebar-width: 280px;
             --lighter-blue: #6bd5ff;
+            --mobile-breakpoint: 900px;
+            --mobile-horizontal-breakpoint: 700px;
         }
 
         body {
@@ -47,7 +49,7 @@
             background: 
                 radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
                 radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 30%);
+                radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 极.03) 0%, transparent 30%);
             pointer-events: none;
             z-index: -2;
         }
@@ -210,7 +212,7 @@
             max-width: 600px;
             margin: 22.5px auto;
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 22.5px rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 22.5极 rgba(0, 255, 255, 0.1);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -224,14 +226,14 @@
             width: 100%;
             height: 3px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transform: scaleX(0);
+            transform: scale极(0);
             transform-origin: left;
             transition: transform 0.5s ease;
         }
 
         .contact-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 7.5px 30px rgba(0, 255, 255, 极.3);
+            box-shadow: 0 7.5px 30px rgba(0, 255, 255, 0.3);
         }
 
         .contact-card:hover::before {
@@ -347,6 +349,15 @@
             margin-bottom: 8px;
         }
 
+        .article-image {
+            width: 100%;
+            max-width: 300px;
+            margin: 15px auto;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
         .citation {
             background: rgba(0, 255, 255, 0.1);
             color: var(--primary);
@@ -355,7 +366,7 @@
             font-size: 0.7rem;
             border: 1px solid rgba(0, 255, 255, 0.2);
             display: inline-block;
-            margin: 5极 0;
+            margin: 5px 0;
         }
 
         .article-meta {
@@ -454,6 +465,7 @@
             opacity: 0.7;
         }
 
+        /* Mobile Optimization */
         @media (max-width: 1100px) {
             .articles-container {
                 grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -463,6 +475,7 @@
         @media (max-width: 900px) {
             body {
                 flex-direction: column;
+                padding: 15px;
             }
             
             .sidebar {
@@ -488,11 +501,22 @@
                 width: 150px;
                 height: 150px;
             }
+            
+            .back-button {
+                top: 15px;
+                left: 15px;
+                width: 45px;
+                height: 45px;
+            }
         }
 
         @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
             h1 {
-                font-size: 1.65rem;
+                font-size: 1.8rem;
             }
             
             .contact-card a {
@@ -508,8 +532,8 @@
             }
             
             .back-button {
-                top: 15px;
-                left: 15px;
+                top: 12px;
+                left: 12px;
                 width: 40px;
                 height: 40px;
             }
@@ -517,6 +541,79 @@
             .header-image {
                 width: 120px;
                 height: 120px;
+            }
+            
+            .article-image {
+                max-width: 250px;
+            }
+        }
+
+        /* Mobile horizontal orientation */
+        @media (max-height: 500px) and (orientation: landscape) {
+            body {
+                padding: 10px;
+                flex-direction: row;
+            }
+            
+            .sidebar {
+                width: 220px;
+                margin-right: 15px;
+                position: sticky;
+                top: 10px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            
+            .main-content {
+                overflow-y: auto;
+                max-height: 90vh;
+            }
+            
+            .articles-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .article-card {
+                padding: 12px;
+            }
+            
+            .header-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Custom scrollbar for mobile horizontal */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .sidebar::-webkit-scrollbar {
+                width: 5px;
+            }
+            
+            .sidebar::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, 0.1);
+            }
+            
+            .sidebar::-webkit-scrollbar-thumb {
+                background: var(--primary);
+                border-radius: 5px;
+            }
+            
+            .main-content::-webkit-scrollbar {
+                width: 5px;
+            }
+            
+            .main-content::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, 0.1);
+            }
+            
+            .main-content::-webkit-scrollbar-thumb {
+                background: var(--secondary);
+                border-radius: 5px;
             }
         }
     </style>
@@ -531,7 +628,7 @@
     
     <!-- Sidebar with links and images -->
     <div class="sidebar">
-        <img src="https://github.com/oeybers-cpu/Achebe/blob/main/1756924825.png?raw=true" alt="Chinua Achebe" class="sidebar-image">
+        <img src="https://github.com/oeybers-cpu/Achebe/blob/main/achebe.png?raw=true" alt="Chinua Achebe" class="sidebar-image">
         
         <div class="sidebar-links">
             <a href="https://www.arcjournals.org/pdfs/ijsell/v8-i5/2.pdf" class="sidebar-link" target="_blank">
@@ -578,6 +675,8 @@
                     <div class="article-content">
                         <p>Achebe's literary works—especially "Things Fall Apart"—seek to reclaim African stories from colonial narratives that traditionally distorted or erased African histories and cultures. He believed in helping learners see themselves reflected in the curriculum and countering colonial stereotypes.</p>
                         
+                        <img src="https://github.com/oeybers-cpu/Achebe/blob/main/1756929190.png?raw=true" alt="African Narratives" class="article-image">
+                        
                         <p>Achebe deliberately crafted "Things Fall Apart" as a response to European representations of Africa, particularly Joseph Conrad's "Heart of Darkness" and Joyce Cary's "Mister Johnson." His novel presents Igbo society as complex and sophisticated with its own systems of justice, religion, and social organization before colonial disruption.</p>
                         
                         <p><strong>Key implications for academic literacy:</strong></p>
@@ -619,7 +718,7 @@
                         <ul>
                             <li>Developing locally relevant English language materials that reflect African experiences</li>
                             <li>Valuing code-switching and hybrid language forms as legitimate communication</li>
-                            <li>Recognizing the legitimacy of African varieties of English (such as Nigerian English)</li>
+                            <li>Recognizing the legitimacy of African varieties of English (such as Nigerian English)</极>
                             <li>Using literature to teach language in cultural context rather than as abstract rules</li>
                         </ul>
                         
@@ -661,7 +760,7 @@
                     <div class="article-meta">
                         <span class="meta-tag">Orality</span>
                         <span class="meta-tag new-tag">Tradition</span>
-                        <span class="meta-tag">Proverbs</span>
+                        <span class="meta极ag">Proverbs</span>
                     </div>
                 </div>
                 
@@ -700,7 +799,7 @@
                 
                 <!-- Decolonizing English -->
                 <div class="article-card">
-                    <h3><i class="fas fa-pen-fancy"></i> Decolonizing English</h3>
+                    <h3><极 class="fas fa-pen-fancy"></i> Decolonizing English</h3>
                     <div class="article-content">
                         <p>Achebe's insistence on using English in a localized, Africanized way shows that language itself can be decolonized—not necessarily by abandoning colonial languages altogether, but by reshaping them to serve local realities and express indigenous values.</p>
                         
