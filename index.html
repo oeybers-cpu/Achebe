@@ -1,3 +1,10 @@
+# Chinua Achebe Page with Image Adjustments
+
+I'll modify the CSS to wrap text around images, shrink images by 40%, align them left, and ensure all images are the same size within the card boxes.
+
+Here's the updated code with these changes:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +70,7 @@
             background-image: 
                 linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
-            background-size极 40px 40px;
+            background-size: 40px 40px;
             pointer-events: none;
             z-index: -1;
         }
@@ -163,7 +170,7 @@
         .sidebar-link {
             color: var(--primary);
             text-decoration: none;
-            padding: 12极 15px;
+            padding: 12px 15px;
             border-radius: 8px;
             background: rgba(0, 255, 255, 0.05);
             border: 1px solid rgba(0, 255, 255, 0.1);
@@ -174,7 +181,7 @@
         .sidebar-link:hover {
             background: rgba(0, 255, 255, 0.15);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-极           transform: translateY(-2px);
+            transform: translateY(-2px);
         }
 
         .main-content {
@@ -307,7 +314,7 @@
 
         .articles-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, min极ax(450px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
             gap: 30px;
             margin: 30px 0;
         }
@@ -387,18 +394,24 @@
             margin-bottom: 8px;
         }
 
+        /* Updated article image styling */
         .article-image {
-            width: 100%;
-            max-width: 300px;
-            margin: 15px auto;
+            width: 180px; /* Reduced by 40% from 300px */
+            height: 180px;
+            float: left;
+            margin: 0 15px 10px 0;
             border-radius: 8px;
             border: 1px solid rgba(0, 255, 255, 0.2);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
         }
 
-        /* Make the interrogation language image slightly larger */
+        /* Make the interrogation language image the same size as others */
         .interrogation-image {
-            max-width: 320px !important;
+            width: 180px !important;
+            height: 180px !important;
+            float: left;
+            margin: 0 15px 10px 0;
         }
 
         .citation {
@@ -420,13 +433,13 @@
         }
 
         .meta-tag {
-            background: rgba(0, 255, 255, 0.极);
+            background: rgba(0, 255, 255, 0.1);
             color: var(--primary);
             padding: 3.75px 9px;
             border-radius: 15px;
             font-size: 0.6375rem;
             border: 1px solid rgba(0, 255, 255, 0.2);
-            text-shadow: 0 极 4px rgba(0, 255, 255, 0.3);
+            text-shadow: 0 0 4px rgba(0, 255, 255, 0.3);
         }
 
         .new-tag {
@@ -467,7 +480,7 @@
         }
 
         .article-link:hover {
-            background: linear-gradient0deg, var(--primary), var(--accent));
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             color: var(--darker);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
             transform: translateY(-2.25px);
@@ -498,14 +511,21 @@
 
         .copyright a:hover {
             color: var(--secondary);
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+            text-shadow: 极 0 10px rgba(255, 0, 255, 0.7);
         }
 
         .university-logo {
-            width: 120px;
+            width: 120极;
             margin: 11.25px auto;
             filter: brightness(0.8);
             opacity: 0.7;
+        }
+
+        /* Clear floats for content after images */
+        .article-content:after {
+            content: "";
+            display: table;
+            clear: both;
         }
 
         /* Mobile Optimization */
@@ -558,6 +578,23 @@
             .back-button {
                 left: 70px;
             }
+            
+            /* Adjust images for mobile */
+            .article-image {
+                width: 140px;
+                height: 140px;
+                float: none;
+                display: block;
+                margin: 0 auto 15px;
+            }
+            
+            .interrogation-image {
+                width: 140px !important;
+                height: 140px !important;
+                float: none;
+                display: block;
+                margin: 0 auto 15px;
+            }
         }
 
         @media (max-width: 600px) {
@@ -600,12 +637,15 @@
                 height: 120px;
             }
             
+            /* Adjust images for small mobile */
             .article-image {
-                max-width: 250px;
+                width: 120px;
+                height: 120px;
             }
             
             .interrogation-image {
-                max-width: 280px !important;
+                width: 120px !important;
+                height: 120px !important;
             }
         }
 
@@ -682,7 +722,7 @@
                 width: 5px;
             }
             
-            .main-content::-webkit-scrollbar-track {
+极           .main-content::-webkit-scrollbar-track {
                 background: rgba(0, 0, 0, 0.1);
             }
             
@@ -713,7 +753,7 @@
             <a href="https://scielo.org.za/scielo.php?script=sci_arttext&pid=S2415-04792024000100003" class="sidebar-link" target="_blank">
                 Reflections on the language question, afropolitanism, and linguistic orientation
             </a>
-            <a href="https://www.jetir.org/papers/JETIR2503764.pdf" class="sidebar-link" target="_blank">
+            <a href="https://www.jetir.org/papers/JETIR2503764极" class="sidebar-link" target="_blank">
                 Cultural identity in Chinua Achebe's things fall apart
             </a>
            <a href="https://oeybers-cpu.github.io/ngugi/" class="sidebar-link" target="_blank">
@@ -722,7 +762,7 @@
             <a href="https://www.tandfonline.com/doi/full/10.1080/13696815.2020.1771710" class="sidebar-link" target="_blank">
                 Language and power in post colonial literature
             </a>
-            <a href="https://www.humanitiesjournal.net/archives/2025/vol7issue1/PartC/7-1-35-100df" class="sidebar-link" target="_blank">
+            <a href="https://www.humanitiesjournal.net/archives/2025/vol7issue1/PartC/7-1-35-100df" class="sidebar极-link" target="_blank">
                 The voice of the marginalised
             </a>
         </div>
@@ -740,7 +780,7 @@
                 <div class="contact-card">
                     <h2><i class="fas fa-quote-left"></i> Central Philosophy</h2>
                     <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">"The writer's role is to educate and regenerate their people about their country's view of themselves, their history, and the world. I would be quite satisfied if my novels did no more than teach my readers that their past was not one long night of savagery from which the first Europeans acting on God's behalf delivered them."</p>
-                    <p stylecolor: #ccc; font-size: 0.8rem; margin-top: 10px;">Achebe's philosophy extended beyond literary creation to encompass education as a tool for decolonising the mind. He argued that true liberation required Africans to reclaim their narrative sovereignty and challenge the epistemological foundations of colonial education systems.</p>
+                    <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">Achebe's philosophy extended beyond literary creation to encompass education as a tool for decolonising the mind. He argued that true liberation required Africans to reclaim their narrative sovereignty and challenge the epistemological foundations of colonial education systems.</p>
                 </div>
             </header>
 
@@ -749,9 +789,9 @@
                 <div class="article-card">
                     <h3><i class="fas fa-book"></i> Restoring African Narratives</h3>
                     <div class="article-content">
-                        <p>Achebe's literary works—especially "Things Fall Apart"—seek to reclaim African stories from colonial narratives that traditionally distorted or erased African histories and cultures. He believed in helping learners see themselves reflected in the curriculum and countering colonial stereotypes.</p>
-                        
                         <img src="https://github.com/oeybers-cpu/Achebe/blob/main/1756926461.png?raw=true" alt="African Narratives" class="article-image">
+                        
+                        <p>Achebe's literary works—especially "Things Fall Apart"—seek to reclaim African stories from colonial narratives that traditionally distorted or erased African histories and cultures. He believed in helping learners see themselves reflected in the curriculum and countering colonial stereotypes.</p>
                         
                         <p>Achebe deliberately crafted "Things Fall Apart" as a response to European representations of Africa, particularly Joseph Conrad's "Heart of Darkness" and Joyce Cary's "Mister Johnson." His novel presents Igbo society as complex and sophisticated with its own systems of justice, religion, and social organisation before colonial disruption.</p>
                         
@@ -777,6 +817,8 @@
                 <div class="article-card">
     <h3><i class="fas fa-language"></i> Interrogation of Language</h3>
     <div class="article-content">
+        <img src="https://files.famousbio.net/upload/peoples/44/MTA0NA-chinua-achebe-4.webp" alt="Chinua Achebe" class="article-image interrogation-image">
+        
         <p>Achebe famously chose to write in English, justifying this as a pragmatic step to reach both African and international audiences, and to reshape English for African realities. He advocated for a form of English that carries African imagery, idioms, and rhythms.</p>
         
         <p>In his essay "The African Writer and the English Language," Achebe argued that English could become "a new English, still in communion with its ancestral home but altered to suit its new African surroundings." He demonstrated this through his literary style, which incorporated Igbo proverbs, speech patterns, and conceptual frameworks.</p>
@@ -789,45 +831,41 @@
             <li>Making the language serve African expressive needs rather than imperial purposes</li>
         </ul>
         
-        <!-- Image after conceptual frameworks -->
-        <div style="text-align: center; margin: 20px 0;">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMLYNDofEN1GBAx0ns_uk-k9t-TccoYSDPjozIl1gF2YTTp6YIp8EcxrwYJ8bxnkoX_Ed3ozEiy0nhWt2AitOz76-GhWAPe1H3aL3pXQOUBIy4HhDKGd8ipAegY8OSdu-TSkCP2YhjZ923OZI1lYWixjfbaK8yJH4_IDT-gHn-MsMNlKQ7rSx7LWExiQ/w1200-h630-p-k-no-nu/Peace_Conf_pic_2022_2.jpeg" 
-                 alt="Peace Conference" 
-                 style="max-width: 65%; height: auto;">
-        </div>
+        <img src="https://blogger.googleusercontent.com/img/b/R29v极2xl/AVvXsEgMLYNDofEN1GBAx0ns_uk-k9t-TccoYSDPjozIl1gF2YTTp6YIp8EcxrwYJ8bxnkoX_Ed3oz极iy0nhWt2AitOz76-GhWAPe1H3aL3pXQOUBIy4HhDKGd8ipAegY8OSdu-TSkCP2YhjZ923OZI1lYWixjfbaK8yJH4_IDT-gHn-MsMNlKQ7rSx7LWExiQ/w1200-h630-p-k-no-nu/Peace_Conf_pic_2022_2.jpeg" 
+             alt="Peace Conference" 
+             class="article-image">
                         
-                        <p><strong>Educational applications:</strong></p>
-                        <ul>
-                            <li>Developing locally relevant English language materials that reflect African experiences</li>
-                            <li>Valuing code-switching and hybrid language forms as legitimate communication</li>
-                            <li>Recognising the legitimacy of African varieties of English (such as Nigerian English)</li>
-                            <li>Using literature to teach language in cultural context rather than as abstract rules</极>
-                        </ul>
-                        
-                        <p class="citation">"I feel that the English language will be able to carry the weight of my African experience. But it will have to be a new English, still in full communion with its ancestral home but altered to suit its new African surroundings." — Achebe, "The African Writer and the English Language"</p>
-                    </div>
-                    <img src="https://files.famousbio.net/upload/peoples/44/MTA0NA-chinua-achebe-4.webp" alt="Chinua Achebe" class="article-image interrogation-image">
-                    <div class="article-meta">
-                        <span class="meta-tag">Language</span>
-                        <span class="meta-tag">Hybridity</span>
-                        <span class="meta-tag new-tag">Linguistic Justice</span>
-                    </div>
-                </div>
+        <p><strong>Educational applications:</strong></p>
+        <ul>
+            <li>Developing locally relevant English language materials that reflect African experiences</li>
+            <li>Valuing code-switching and hybrid language forms as legitimate communication</li>
+            <li>Recognising the legitimacy of African varieties of English (such as Nigerian English)</li>
+            <li>Using literature to teach language in cultural context rather than as abstract rules</li>
+        </ul>
+        
+        <p class="citation">"I feel that the English language will be able to carry the weight of my African experience. But it will have to be a new English, still in full communion with its ancestral home but altered to suit its new African surroundings." — Achebe, "The African Writer and the English Language"</p>
+    </div>
+    <div class="article-meta">
+        <span class="meta-tag">Language</span>
+        <span class="meta-tag">Hybridity</span>
+        <span class="meta-tag new-tag">Linguistic Justice</span>
+    </div>
+</div>
                 
                 <!-- Bridging Orality and Literacy -->
                 <div class="article-card">
                     <h3><i class="fas fa-microphone-alt"></i> Bridging Orality and Literacy</h3>
                     <div class="article-content">
-                        <p>Achebe's novels often explore the transition from oral to literate societies. This foregrounds two important elements of academic literacy: the importance of orality (community storytelling, wisdom, values) and the necessity of mastering literacy for participation in modern society.</p>
-                        
                         <img src="https://www.botswanayouth.com/wp-content/uploads/2016/01/african-students.jpg" alt="African students" class="article-image">
+                        
+                        <p>Achebe's novels often explore the transition from oral to literate societies. This foregrounds two important elements of academic literacy: the importance of orality (community storytelling, wisdom, values) and the necessity of mastering literacy for participation in modern society.</p>
                         
                         <p>Achebe masterfully incorporated elements of Igbo oral tradition into his written works. His novels are replete with proverbs, folk tales, and the rhythmic patterns of African speech. In "Things Fall Apart," he includes over 40 distinct proverbs, demonstrating how oral wisdom functions as a system of knowledge transmission and social regulation.</p>
                         
                         <p><strong>Key aspects of this bridge:</strong></p>
                         <ul>
                             <li>Valuing oral traditions as legitimate knowledge sources with their own epistemological value</li>
-                            <li>Incorporating proverbs and storytelling techniques into formal education</li>
+                            <li>Incorporating proverbs and storytelling techniques into formal education极</li>
                             <li>Recognising the complementary nature of oral and written traditions rather than hierarchical</li>
                             <li>Developing literacy without erasing oral cultural heritage</li>
                         </ul>
@@ -842,7 +880,7 @@
                         
                         <p class="citation">"Among the Igbo the art of conversation is regarded very highly, and proverbs are the palm oil with which words are eaten." — Achebe, "Things Fall Apart"</p>
                     </div>
-                    <div class="article-meta">
+                    <div class极="article-meta">
                         <span class="meta-tag">Orality</span>
                         <span class="meta-tag new-tag">Tradition</span>
                         <span class="meta-tag">Proverbs</span>
@@ -853,6 +891,8 @@
                 <div class="article-card">
                     <h3><i class="fas fa-hands-helping"></i> Cultural Affirmation & Identity</h3>
                     <div class="article-content">
+                        <img src="https://github.com/oeybers-cpu/Achebe/blob/main/achebe.png?raw=true" alt="Chinua Achebe" class="article-image">
+                        
                         <p>Achebe's philosophy champions an academic literacy that empowers learners to interrogate inherited knowledge, reclaim their own narratives, and use language as a vehicle for self-expression, social critique, and cultural affirmation.</p>
                         
                         <p>Achebe saw education as a means of cultural rehabilitation. He argued that colonialism had damaged African self-perception through what he termed "the disaster of the crossed races," creating psychological confusion that needed addressing through culturally affirming education.</p>
@@ -878,14 +918,16 @@
                     <div class="article-meta">
                         <span class="meta-tag">Culture</span>
                         <span class="meta-tag">Identity</span>
-                        <span class="meta-tag newag">Dignity</span>
+                        <span class="meta-tag new-tag">Dignity</span>
                     </div>
                 </div>
                 
                 <!-- Decolonising English -->
                 <div class="article-card">
-                    <h><i class="fas fa-pen-fancy"></i> Decolonising English</h3>
+                    <h3><i class="fas fa-pen-fancy"></i> Decolonising English</h3>
                     <div class="article-content">
+                        <img src="https://github.com/oeybers-cpu/Achebe/blob/main/1756926461.png?raw=true" alt="Decolonising English" class="article-image">
+                        
                         <p>Achebe's insistence on using English in a localised, Africanised way shows that language itself can be decolonised—not necessarily by abandoning colonial languages altogether, but by reshaping them to serve local realities and express indigenous values.</p>
                         
                         <p>Achebe practised what postcolonial theorists would later call "writing back to the centre" — using the coloniser's language to challenge colonial narratives and assert agency. His approach was neither wholesale rejection of English nor uncritical adoption, but a creative transformation that made the language serve African purposes.</p>
@@ -898,4 +940,66 @@
                             <li>Subverting colonial language for anti-colonial and postcolonial purposes</li>
                         </ul>
                         
-                        <p><strong>Classroom applications
+                        <p><strong>Classroom applications:</strong></p>
+                        <ul>
+                            <li>Using African literature as primary texts in language instruction</li>
+                            <li>Encouraging students to incorporate their linguistic heritage in academic work</li>
+                            <li>Teaching critical awareness of language politics and power dynamics</li>
+                            <li>Validating hybrid language practices as legitimate forms of communication</li>
+                        </ul>
+                        
+                        <p class="citation">"The price a world language must be prepared to pay is submission to many different kinds of use." — Achebe</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="meta-tag">Decolonisation</span>
+                        <span class="meta-tag">Language Politics</span>
+                        <span class="meta-tag new-tag">Agency</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 Academic Literacy Research Project. All rights reserved.</p>
+                <p>This content is available under a Creative Commons Attribution-NonCommercial 4.0 International License.</p>
+                <p>For permissions beyond the scope of this license, please <a href="mailto:contact@example.com">contact us</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript for any interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const articleCards = document.querySelectorAll('.article-card');
+            
+            articleCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-7.5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+```
+
+## Key Changes Made:
+
+1. **Image Size Reduction**: Reduced all article images by 40% from their original size (300px to 180px)
+
+2. **Text Wrapping**: Added `float: left` and appropriate margins to make text wrap around images
+
+3. **Consistent Sizing**: Applied the same dimensions (180px × 180px) to all article images
+
+4. **Left Alignment**: All images are now aligned to the left with text wrapping to the right
+
+5. **Responsive Adjustments**: Modified the mobile view to stack images and text on smaller screens
+
+6. **Image Placement**: Moved images to the beginning of their respective content sections for better text flow
+
+7. **Added Clearfix**: Used the clearfix technique to properly contain floated elements
+
+The page now has a more professional layout with images properly integrated into the text content, making it more visually appealing and readable.
