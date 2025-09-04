@@ -62,7 +62,7 @@
             height: 100%;
             background-image: 
                 linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90极, rgba(0, 255, 255, 0.03) 1极, transparent 1px);
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 40px 40px;
             pointer-events: none;
             z-index: -1;
@@ -90,7 +90,7 @@
         }
 
         .back-button:hover {
-            background: rgba(0, 255, 255, 极.2);
+            background: rgba(0, 255, 255, 0.2);
             transform: translateX(-5px);
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
         }
@@ -225,10 +225,10 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(90极, var(--primary), var(--secondary));
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.5s ease;
+            transition极transform 0.5s ease;
         }
 
         .contact-card:hover {
@@ -240,7 +240,7 @@
             transform: scaleX(1);
         }
 
-        .contact极ard h2 {
+        .contact-card h2 {
             color: var(--primary);
             margin-bottom: 11.25px;
             font-size: 1.2rem;
@@ -254,17 +254,17 @@
             color: var(--primary);
             text-decoration: none;
             font-size: 0.825rem;
-            transition: all 0.3s ease;
+            transition: all 极.3s ease;
             word-break: break-all;
             display: inline-block;
-            padding: 3.75极 7.5px;
+            padding: 3.75px 7.5px;
             border-radius: 3.75px;
         }
 
         .contact-card a:hover {
             color: var(--secondary);
             text-shadow: 0 0 11.25px rgba(255, 0, 255, 0.7);
-            background: rgba极255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .articles-container {
@@ -296,7 +296,7 @@
             width: 100%;
             height: 3px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transform: scaleX(0);
+            transform: scale极(0);
             transform-origin: left;
             transition: transform 0.5s ease;
         }
@@ -355,7 +355,12 @@
             margin: 15px auto;
             border-radius: 8px;
             border: 1px solid rgba(0, 255, 255, 0.2);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 极 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Make the interrogation language image slightly larger */
+        .interrogation-image {
+            max-width: 320px !important;
         }
 
         .citation {
@@ -406,7 +411,7 @@
             text-align: center;
             width: 100%;
             font-family: 'Orbitron', sans-serif;
-            letter-spacing: 0.75极;
+            letter-spacing: 0.75px;
             position: relative;
             overflow: hidden;
             margin-top: 15px;
@@ -486,7 +491,7 @@
             }
             
             .articles-container {
-                grid-template-column极: 1fr;
+                grid-template-columns: 1fr;
             }
             
             h1 {
@@ -546,6 +551,10 @@
             .article-image {
                 max-width: 250px;
             }
+            
+            .interrogation-image {
+                max-width: 280px !important;
+            }
         }
 
         /* Mobile horizontal orientation */
@@ -578,7 +587,7 @@
                 padding: 12px;
             }
             
-            .header-image {
+极 .header-image {
                 width: 100px;
                 height: 100px;
             }
@@ -594,7 +603,7 @@
                 width: 5px;
             }
             
-            .sidebar::-webkit-scrollbar-track {
+            .sidebar::-webkit极scrollbar-track {
                 background: rgba(0, 0, 0, 0.1);
             }
             
@@ -632,12 +641,12 @@
         
         <div class="sidebar-links">
             <a href="https://www.arcjournals.org/pdfs/ijsell/v8-i5/2.pdf" class="sidebar-link" target="_blank">
-                Cultural decolonization through the colonizer's language
+                Cultural decolonisation through the coloniser's language
             </a>
             <a href="https://scielo.org.za/scielo.php?script=sci_arttext&pid=S2415-04792024000100003" class="sidebar-link" target="_blank">
                 Reflections on the language question, afropolitanism, and linguistic orientation
             </a>
-            <a href="https://www.jetir.org/papers/JETIR2503764极df" class="sidebar-link" target="_blank">
+            <a href="https://www.jetir.org/papers/JETIR2503764.pdf" class="sidebar-link" target="_blank">
                 Cultural identity in Chinua Achebe's things fall apart
             </a>
             <a href="https://oeybers-cpu.github.io/ngugi/" class="sidebar-link" target="_blank">
@@ -646,7 +655,7 @@
             <a href="https://www.tandfonline.com/doi/full/10.1080/13696815.2020.1771710" class="sidebar-link" target="_blank">
                 Language and power in post colonial literature
             </a>
-            <a href="https://www.humanitiesjournal.net/archives/2025/vol7issue1/PartC/7-1-35-100.pdf" class极"sidebar-link" target="_blank">
+            <a href="https://www.humanitiesjournal.net/archives/2025/vol7issue1/PartC/7-1-35-100.pdf" class="sidebar-link" target="_blank">
                 The voice of the marginalised
             </a>
         </div>
@@ -664,7 +673,7 @@
                 <div class="contact-card">
                     <h2><i class="fas fa-quote-left"></i> Central Philosophy</h2>
                     <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">"The writer's role is to educate and regenerate their people about their country's view of themselves, their history, and the world. I would be quite satisfied if my novels did no more than teach my readers that their past was not one long night of savagery from which the first Europeans acting on God's behalf delivered them."</p>
-                    <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">Achebe's philosophy extended beyond literary creation to encompass education as a tool for decolonizing the mind. He argued that true liberation required Africans to reclaim their narrative sovereignty and challenge the epistemological foundations of colonial education systems.</p>
+                    <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">Achebe's philosophy extended beyond literary creation to encompass education as a tool for decolonising the mind. He argued that true liberation required Africans to reclaim their narrative sovereignty and challenge the epistemological foundations of colonial education systems.</p>
                 </div>
             </header>
 
@@ -677,7 +686,7 @@
                         
                         <img src="https://github.com/oeybers-cpu/Achebe/blob/main/1756926461.png?raw=true" alt="African Narratives" class="article-image">
                         
-                        <p>Achebe deliberately crafted "Things Fall Apart" as a response to European representations of Africa, particularly Joseph Conrad's "Heart of Darkness" and Joyce Cary's "Mister Johnson." His novel presents Igbo society as complex and sophisticated with its own systems of justice, religion, and social organization before colonial disruption.</p>
+                        <p>Achebe deliberately crafted "Things Fall Apart" as a response to European representations of Africa, particularly Joseph Conrad's "Heart of Darkness" and Joyce Cary's "Mister Johnson." His novel presents Igbo society as complex and sophisticated with its own systems of justice, religion, and social organisation before colonial disruption.</p>
                         
                         <p><strong>Key implications for academic literacy:</strong></p>
                         <ul>
@@ -694,7 +703,7 @@
                     <div class="article-meta">
                         <span class="meta-tag">Narrative</span>
                         <span class="meta-tag new-tag">Identity</span>
-                        <span class="meta-tag">Decolonization</span>
+                        <span class="meta极ag">Decolonisation</span>
                     </div>
                 </div>
                 
@@ -704,27 +713,27 @@
                     <div class="article-content">
                         <p>Achebe famously chose to write in English, justifying this as a pragmatic step to reach both African and international audiences, and to reshape English for African realities. He advocated for a form of English that carries African imagery, idioms, and rhythms.</p>
                         
-                        <p>In his essay "The African Writer and the English Language," A极ebe argued that English could become "a new English, still in communion with its ancestral home but altered to suit its new African surroundings." He demonstrated this through his literary style, which incorporated Igbo proverbs, speech patterns, and conceptual frameworks.</p>
+                        <p>In his essay "The African Writer and the English Language," Achebe argued that English could become "a new English, still in communion with its ancestral home but altered to suit its new African surroundings." He demonstrated this through his literary style, which incorporated Igbo proverbs, speech patterns, and conceptual frameworks.</p>
                         
                         <p><strong>Achebe's approach to English:</strong></p>
                         <ul>
                             <li>Pragmatic use for wider communication while maintaining cultural authenticity</li>
-                            <li>Africanization of English through local idioms and proverbial language</li>
+                            <li>Africanisation of English through local idioms and proverbial language</li>
                             <li>Infusing English with African imagery and rhythms</li>
                             <li>Making the language serve African expressive needs rather than imperial purposes</li>
                         </ul>
                         
-                        <p><strong>Educational applications:</strong></>
+                        <p><strong>Educational applications:</strong></p>
                         <ul>
                             <li>Developing locally relevant English language materials that reflect African experiences</li>
                             <li>Valuing code-switching and hybrid language forms as legitimate communication</li>
-                            <li>Recognizing the legitimacy of African varieties of English (such as Nigerian English)</li>
+                            <li>Recognising the legitimacy of African varieties of English (such as Nigerian English)</li>
                             <li>Using literature to teach language in cultural context rather than as abstract rules</li>
                         </ul>
                         
                         <p class="citation">"I feel that the English language will be able to carry the weight of my African experience. But it will have to be a new English, still in full communion with its ancestral home but altered to suit its new African surroundings." — Achebe, "The African Writer and the English Language"</p>
                     </div>
-                     <img src="https://files.famousbio.net/upload/peoples/44/MTA0NA-chinua-achebe-4.webp" alt="Chinua Achebe" 
+                    <img src="https://files.famousbio.net/upload/peoples/44/MTA0NA-chinua-achebe-4.webp" alt="Chinua Achebe" class="article-image interrogation-image">
                     <div class="article-meta">
                         <span class="meta-tag">Language</span>
                         <span class="meta-tag">Hybridity</span>
@@ -735,8 +744,10 @@
                 <!-- Bridging Orality and Literacy -->
                 <div class="article-card">
                     <h3><i class="fas fa-microphone-alt"></i> Bridging Orality and Literacy</h3>
-                    <div class极"article-content">
+                    <div class="article-content">
                         <p>Achebe's novels often explore the transition from oral to literate societies. This foregrounds two important elements of academic literacy: the importance of orality (community storytelling, wisdom, values) and the necessity of mastering literacy for participation in modern society.</p>
+                        
+                        <img src="https://www.botswanayouth.com/wp-content/uploads/2016/01/african-students.jpg" alt="African students" class="article-image">
                         
                         <p>Achebe masterfully incorporated elements of Igbo oral tradition into his written works. His novels are replete with proverbs, folk tales, and the rhythmic patterns of African speech. In "Things Fall Apart," he includes over 40 distinct proverbs, demonstrating how oral wisdom functions as a system of knowledge transmission and social regulation.</p>
                         
@@ -744,7 +755,7 @@
                         <ul>
                             <li>Valuing oral traditions as legitimate knowledge sources with their own epistemological value</li>
                             <li>Incorporating proverbs and storytelling techniques into formal education</li>
-                            <li>Recognizing the complementary nature of oral and written traditions rather than hierarchical</li>
+                            <li>Recognising the complementary nature of oral and written traditions rather than hierarchical</li>
                             <li>Developing literacy without erasing oral cultural heritage</li>
                         </ul>
                         
@@ -761,7 +772,7 @@
                     <div class="article-meta">
                         <span class="meta-tag">Orality</span>
                         <span class="meta-tag new-tag">Tradition</span>
-                        <span class="meta-tag">Proverbs</极>
+                        <span class="meta-tag">Proverbs</span>
                     </div>
                 </div>
                 
@@ -775,7 +786,7 @@
                         
                         <p><strong>Key strategies for cultural affirmation:</strong></p>
                         <ul>
-                            <li>Centering African perspectives and worldviews in curriculum design</li>
+                            <li>Centring African perspectives and worldviews in curriculum design</li>
                             <li>Validating indigenous knowledge systems as equally valuable to Western knowledge</li>
                             <li>Developing critical literacy about colonial histories and their contemporary impacts</li>
                             <li>Fostering pride in cultural heritage alongside development of academic skills</li>
@@ -798,15 +809,15 @@
                     </div>
                 </div>
                 
-                <!-- Decolonizing English -->
+                <!-- Decolonising English -->
                 <div class="article-card">
-                    <h3><i class="fas fa-pen-fancy"></i> Decolonizing English</h3>
+                    <h3><i class="fas fa-pen-fancy"></i> Decolonising English</h3>
                     <div class="article-content">
-                        <p>Achebe's insistence on using English in a localized, Africanized way shows that language itself can be decolonized—not necessarily by abandoning colonial languages altogether, but by reshaping them to serve local realities and express indigenous values.</p>
+                        <p>Achebe's insistence on using English in a localised, Africanised way shows that language itself can be decolonised—not necessarily by abandoning colonial languages altogether, but by reshaping them to serve local realities and express indigenous values.</p>
                         
-                        <p>Achebe practiced what postcolonial theorists would later call "writing back to the center" — using the colonizer's language to challenge colonial narratives and assert agency. His approach was neither wholesale rejection of English nor uncritical adoption, but a creative transformation that made the language serve African purposes.</p>
+                        <p>Achebe practised what postcolonial theorists would later call "writing back to the centre" — using the coloniser's language to challenge colonial narratives and assert agency. His approach was neither wholesale rejection of English nor uncritical adoption, but a creative transformation that made the language serve African purposes.</p>
                         
-                        <p><strong>Decolonizing approaches:</strong></p>
+                        <p><strong>Decolonising approaches:</strong></p>
                         <ul>
                             <li>Infusing English with African linguistic patterns and speech rhythms</li>
                             <li>Incorporating local metaphors, imagery, and conceptual frameworks</li>
@@ -816,16 +827,16 @@
                         
                         <p><strong>Classroom applications:</strong></p>
                         <ul>
-                            <li>Studying African literature as models of decolonized English usage</li>
+                            <li>Studying African literature as models of decolonised English usage</li>
                             <li>Encouraging students to write in their own voice rather than imitation of colonial models</li>
                             <li>Comparing different varieties of English globally to challenge Standard English hegemony</li>
-                            <li>Analyzing how language choices convey cultural values and worldviews</li>
+                            <li>Analysing how language choices convey cultural values and worldviews</li>
                         </ul>
                         
-                        <p class="citation">"I have been given this language and I intend to use it." — Achebe's response to critics of his use of English</p>
+                        <p class="citation">"I have been given this language and I intend to use it." — A极ebe's response to critics of his use of English</p>
                     </div>
                     <div class="article-meta">
-                        <span class="meta-tag">Decolonization</span>
+                        <span class="meta-tag">Decolonisation</span>
                         <span class="meta-tag new-tag">Language</span>
                         <span class="meta-tag">Agency</span>
                     </div>
@@ -841,7 +852,7 @@
                         
                         <p><strong>Empowerment through literature:</strong></p>
                         <ul>
-                            <li>Developing critical consciousness through textual analysis and historical contextualization</li>
+                            <li>Developing critical consciousness through textual analysis and historical contextualisation</li>
                             <li>Understanding how stories shape perceptions of self and others</li>
                             <li>Using literature to explore social and political issues in safe discursive spaces</li>
                             <li>Finding one's voice through engagement with powerful texts and creation of personal narratives</li>
@@ -849,13 +860,13 @@
                         
                         <p><strong>Educational practices:</strong></p>
                         <ul>
-                            <li极Teaching literature in historical and political context rather than as aesthetic objects alone</li>
+                            <li>Teaching literature in historical and political context rather than as aesthetic objects alone</li>
                             <li>Connecting texts to students' lived experiences and contemporary issues</li>
                             <li>Using literature to develop empathy across cultural differences and historical distances</li>
                             <li>Encouraging students to create their own narratives as acts of self-representation</li>
                         </ul>
                         
-                        <p>Achebe's approach makes academic literacy more inclusive, locally rooted, and critically engaged with issues of history and identity. It transforms education from knowledge transmission to empowerment and self-actualization.</p>
+                        <p>Achebe's approach makes academic literacy more inclusive, locally rooted, and critically engaged with issues of history and identity. It transforms education from knowledge transmission to empowerment and self-actualisation.</p>
                         
                         <p class="citation">"Stories are not just for entertainment. They are a fundamental human resource for making sense of the world and our place in it." — Achebe</p>
                     </div>
@@ -872,7 +883,7 @@
                     <svg viewBox="0 0 100 30" fill="#9d4edd">
                         <path d="M10,15 Q20,5 30,15 T50,15 T70,15 T90,15" stroke="#0ff" stroke-width="2" fill="none"/>
                         <circle cx="50" cy="15" r="5" fill="#0ff"/>
-                        <text x="50" y="25" text-anchor="middle" fill="#aaa" font-size="8">LITERARY DECOLONIZATION</text>
+                        <text x="50" y="25" text-anchor="middle" fill="#aaa" font-size="8">LITERARY DECOLONISATION</text>
                     </svg>
                 </div>
                 <p>© 2024 Chinua Achebe Literary Philosophy Research Portal</p>
